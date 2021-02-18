@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movement/Position")]
     public float mass = 5.5f;
-    [SerializeField]
-    public float speed = 20f;
-    [SerializeField]
-    Rigidbody rb;
+    [SerializeField] public float speed = 20f;
     public Transform positionBone;
-    [SerializeField]
-    float deathDelayTime = 1.5f;
-    [SerializeField]
-    Predictor predictor;
-    [SerializeField]
-    float maxSpeedForPush = 0.1f;
-    [SerializeField]
-    float minDeltaTouch = 0.0025f;
-    [SerializeField]
-    float minPullDistance = 0.05f;
-    [SerializeField]
-    float minPositionDelta = 0.05f;
+
+    [Header("Sensivity")]
+    [SerializeField] float maxSpeedForPush = 0.1f;
+    [SerializeField] float minDeltaTouch = 0.0025f;
+    [SerializeField] float minPullDistance = 0.05f;
+    [SerializeField] float minPositionDelta = 0.05f;
+
+    [Header("Components")]
+    [SerializeField] Rigidbody rb;
+    [SerializeField] Predictor predictor;
+
+    [Header("Other")]
+    [SerializeField] float deathDelayTime = 1.5f;
 
     bool isDead = false;
     bool pulled = false;
@@ -31,7 +30,6 @@ public class PlayerController : MonoBehaviour
     Vector3 lastPredictionPullPosition;
     Vector3 playerLastPosition;
     Vector3 mousePosition;
-
 
     void Start()
     {
@@ -133,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
     public void Push(Vector3 startSpeed)
     {
-        rb.AddForce(startSpeed * 5.5f, ForceMode.Impulse);
+        rb.AddForce(startSpeed * mass, ForceMode.Impulse);
     }
 
     public Vector3 GetPlayerVelocity()
