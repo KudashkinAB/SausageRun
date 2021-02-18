@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
-    GameObject follow;
-    [SerializeField]
-    Vector3 offset;
-    [SerializeField]
-    bool setOffsetOnStart = true;
+    [SerializeField] GameObject follow;
+    [SerializeField] Vector3 offset;
+    [SerializeField] bool setOffsetOnStart = true;
 
     private void Start()
     {

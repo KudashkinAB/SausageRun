@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Predictor : MonoBehaviour
 {
-    [SerializeField]
-    LineRenderer simulationRenderer;
-    [SerializeField]
-    LineRenderer parabolaRenderer;
+    [SerializeField] LineRenderer simulationRenderer;
+    [SerializeField] LineRenderer parabolaRenderer;
 
     public Transform obstaclesHolder;
 

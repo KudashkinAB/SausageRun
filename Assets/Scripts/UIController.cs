@@ -12,18 +12,12 @@ public class UIController : MonoBehaviour
     public static bool simulation = false;
     public static bool parabola = true;
 
-    [SerializeField]
-    GameObject gameOverPanel;
-    [SerializeField]
-    GameObject finishPanel;
-    [SerializeField]
-    GameObject optionsPanel;
-    [SerializeField]
-    Slider predictSlider;
-    [SerializeField]
-    Toggle simulationToggle;
-    [SerializeField]
-    Toggle parabolaToggle;
+    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject finishPanel;
+    [SerializeField] GameObject optionsPanel;
+    [SerializeField] Slider predictSlider;
+    [SerializeField] Toggle simulationToggle;
+    [SerializeField] Toggle parabolaToggle;
 
     private void Awake()
     {
@@ -32,7 +26,7 @@ public class UIController : MonoBehaviour
 
     public void GameOver()
     {
-        if (!finishPanel.active)
+        if (!finishPanel.activeInHierarchy)
         {
             gameOverPanel.SetActive(true);
             optionsPanel.SetActive(false);
